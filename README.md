@@ -3,8 +3,8 @@ Jogo de sobrevivencia zombie, você deve sobreviver as ondas de zombies que vem 
 
 Comandos.
 * comandos para andar.
-    * W,A,S,D
+    - W,A,S,D
 *Comando para efetuar facada.
-    * E
+    - E
 *Pausar Jogo.
-    * ESC
+    - ESC

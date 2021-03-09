@@ -2,6 +2,7 @@ import pygame
 import pygame_menu
 from sys import exit
 from random import randint
+from os.path import normpath
 
 pygame.init()
 
@@ -10,58 +11,58 @@ Altura = 700
 FPS = 30
 
 #Drops
-Municao_Drop = pygame.image.load('Img/DropMunicao.png')
-Municao_Sound_1 = pygame.mixer.Sound('Sound/Municao1.ogg')
-Municao_Sound_2 = pygame.mixer.Sound('Sound/Municao2.ogg')
+Municao_Drop = pygame.image.load(normpath('Img/DropMunicao.png'))
+Municao_Sound_1 = pygame.mixer.Sound(normpath('Sound/Municao1.ogg'))
+Municao_Sound_2 = pygame.mixer.Sound(normpath('Sound/Municao2.ogg'))
 
 #Skills
-SkillImg_ThreeKill = pygame.image.load('Img/ThreeKillSkill.png')
-SkillSound_ThreeKill = pygame.mixer.Sound('Sound/ThreeKillSkill.ogg')
+SkillImg_ThreeKill = pygame.image.load(normpath('Img/ThreeKillSkill.png'))
+SkillSound_ThreeKill = pygame.mixer.Sound(normpath('Sound/ThreeKillSkill.ogg'))
 
-SkillImg_Caboom = pygame.image.load('Img/CaboomSkill.png')
-SkillSound_Caboom = pygame.mixer.Sound('Sound/CaboomSkill.ogg')
+SkillImg_Caboom = pygame.image.load(normpath('Img/CaboomSkill.png'))
+SkillSound_Caboom = pygame.mixer.Sound(normpath('Sound/CaboomSkill.ogg'))
 
-SkillImg_Life_1Porcent = pygame.image.load('Img/Life1PorcentSkill.png')
-SkillSound_1Porcent = pygame.mixer.Sound('Sound/1PorcentSkill.ogg')
+SkillImg_Life_1Porcent = pygame.image.load(normpath('Img/Life1PorcentSkill.png'))
+SkillSound_1Porcent = pygame.mixer.Sound(normpath('Sound/1PorcentSkill.ogg'))
 
 #Imagens zombie andando 
-ImgZombie_Lado_Direito = pygame.image.load('Img/Zombie/Zombie_D.png')
-ImgZombie_Lado_D_Passo1 = pygame.image.load('Img/Zombie/Zombie_D_Passo1.png')
-ImgZombie_Lado_D_Passo2 = pygame.image.load('Img/Zombie/Zombie_D_Passo2.png')
+ImgZombie_Lado_Direito = pygame.image.load(normpath('Img/Zombie/Zombie_D.png'))
+ImgZombie_Lado_D_Passo1 = pygame.image.load(normpath('Img/Zombie/Zombie_D_Passo1.png'))
+ImgZombie_Lado_D_Passo2 = pygame.image.load(normpath('Img/Zombie/Zombie_D_Passo2.png'))
 
-ImgZombie_Lado_Esquerdo =  pygame.image.load('Img/Zombie/Zombie_E.png')
-ImgZombie_Lado_E_Passo1 = pygame.image.load('Img/Zombie/Zombie_E_Passo1.png')
-ImgZombie_Lado_E_Passo2 = pygame.image.load('Img/Zombie/Zombie_E_Passo2.png')
+ImgZombie_Lado_Esquerdo =  pygame.image.load(normpath('Img/Zombie/Zombie_E.png'))
+ImgZombie_Lado_E_Passo1 = pygame.image.load(normpath('Img/Zombie/Zombie_E_Passo1.png'))
+ImgZombie_Lado_E_Passo2 = pygame.image.load(normpath('Img/Zombie/Zombie_E_Passo2.png'))
 
 #Imagen da bala
-ImgBala = pygame.image.load('Img/Bala.png')
+ImgBala = pygame.image.load(normpath('Img/Bala.png'))
 
 #Imagens andando
-Player_Lado_Direito = pygame.image.load('Img/Player/Player_D.png')
-ImgPlayer_Lado_D_Passo1 = pygame.image.load('Img/Player/Player_D_Passo1.png')
-ImgPlayer_Lado_D_Passo2 = pygame.image.load('Img/Player/Player_D_Passo2.png')
+Player_Lado_Direito = pygame.image.load(normpath('Img/Player/Player_D.png'))
+ImgPlayer_Lado_D_Passo1 = pygame.image.load(normpath('Img/Player/Player_D_Passo1.png'))
+ImgPlayer_Lado_D_Passo2 = pygame.image.load(normpath('Img/Player/Player_D_Passo2.png'))
 
-Player_Lado_Esquerdo = pygame.image.load('Img/Player/Player_E.png')
-ImgPlayer_Lado_E_Passo1 = pygame.image.load('Img/Player/Player_E_Passo1.png')
-ImgPlayer_Lado_E_Passo2 = pygame.image.load('Img/Player/Player_E_Passo2.png')
+Player_Lado_Esquerdo = pygame.image.load(normpath('Img/Player/Player_E.png'))
+ImgPlayer_Lado_E_Passo1 = pygame.image.load(normpath('Img/Player/Player_E_Passo1.png'))
+ImgPlayer_Lado_E_Passo2 = pygame.image.load(normpath('Img/Player/Player_E_Passo2.png'))
 
 #Imagens dando Facada
-ImgPlayer_Facada_D1 = pygame.image.load('Img/Player/Player_D_Facada1.png')
-ImgPlayer_Facada_D2 = pygame.image.load('Img/Player/Player_D_Facada2.png')
-ImgPlayer_Facada_D3 = pygame.image.load('Img/Player/Player_D_Facada3.png')
-ImgPlayer_Facada_D4 = pygame.image.load('Img/Player/Player_D_Facada4.png')
+ImgPlayer_Facada_D1 = pygame.image.load(normpath('Img/Player/Player_D_Facada1.png'))
+ImgPlayer_Facada_D2 = pygame.image.load(normpath('Img/Player/Player_D_Facada2.png'))
+ImgPlayer_Facada_D3 = pygame.image.load(normpath('Img/Player/Player_D_Facada3.png'))
+ImgPlayer_Facada_D4 = pygame.image.load(normpath('Img/Player/Player_D_Facada4.png'))
 
-ImgPlayer_Facada_E1 = pygame.image.load('Img/Player/Player_E_Facada1.png')
-ImgPlayer_Facada_E2 = pygame.image.load('Img/Player/Player_E_Facada2.png')
-ImgPlayer_Facada_E3 = pygame.image.load('Img/Player/Player_E_Facada3.png')
-ImgPlayer_Facada_E4 = pygame.image.load('Img/Player/Player_E_Facada4.png')
+ImgPlayer_Facada_E1 = pygame.image.load(normpath('Img/Player/Player_E_Facada1.png'))
+ImgPlayer_Facada_E2 = pygame.image.load(normpath('Img/Player/Player_E_Facada2.png'))
+ImgPlayer_Facada_E3 = pygame.image.load(normpath('Img/Player/Player_E_Facada3.png'))
+ImgPlayer_Facada_E4 = pygame.image.load(normpath('Img/Player/Player_E_Facada4.png'))
 
 #Imagens Zombie Atacando
-ImgZombie_Atacando_E1 = pygame.image.load('Img/Zombie/Zombie_E_Atack1.png')
-ImgZombie_Atacando_E2 = pygame.image.load('Img/Zombie/Zombie_E_Atack2.png')
+ImgZombie_Atacando_E1 = pygame.image.load(normpath('Img/Zombie/Zombie_E_Atack1.png'))
+ImgZombie_Atacando_E2 = pygame.image.load(normpath('Img/Zombie/Zombie_E_Atack2.png'))
 
-ImgZombie_Atacando_D1 = pygame.image.load('Img/Zombie/Zombie_D_Atack1.png')
-ImgZombie_Atacando_D2 = pygame.image.load('Img/Zombie/Zombie_D_Atack2.png')
+ImgZombie_Atacando_D1 = pygame.image.load(normpath('Img/Zombie/Zombie_D_Atack1.png'))
+ImgZombie_Atacando_D2 = pygame.image.load(normpath('Img/Zombie/Zombie_D_Atack2.png'))
 
 #Animacoes
 Animacoes = [[ImgPlayer_Lado_D_Passo1,ImgPlayer_Lado_D_Passo2, ImgPlayer_Lado_D_Passo1, Player_Lado_Direito],\
